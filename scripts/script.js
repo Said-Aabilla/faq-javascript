@@ -1,17 +1,21 @@
 const faqData = [
     {
+        id:1,
         question: "Comment puis-je réserver une chambre d'hôtel ?",
         answer: "Pour réserver une chambre, vous pouvez utiliser notre site web en sélectionnant les dates de votre séjour et en choisissant la chambre souhaitée. Vous recevrez une confirmation par e-mail après avoir complété la réservation."
     },
     {
+        id:2,
         question: "Quels sont les moyens de paiement acceptés ?",
         answer: "Nous acceptons les paiements par carte de crédit (Visa, MasterCard, American Express), PayPal et les virements bancaires. Les paiements en espèces peuvent être effectués à la réception de l'hôtel."
     },
     {
+        id:3,
         question: "Puis-je annuler ou modifier ma réservation ?",
         answer: "Oui, vous pouvez annuler ou modifier votre réservation jusqu'à 24 heures avant la date d'arrivée prévue. Veuillez nous contacter par e-mail ou téléphone pour effectuer ces changements."
     },
     {
+        id:4,
         question: "L'hôtel propose-t-il des services de navette ?",
         answer: "Oui, notre hôtel propose un service de navette depuis et vers l'aéroport. Veuillez réserver ce service à l'avance en fournissant les détails de votre vol."
     }
@@ -23,10 +27,13 @@ function renderFAQ(faqData) {
     const faqContainer = document.querySelector('.faq');
     faqData.forEach(item => {
         const faqItem = document.createElement('div');
+
         faqItem.classList.add('faq-item');
 
         const faqQuestion = document.createElement('button');
         faqQuestion.classList.add('faq-question');
+        faqQuestion.setAttribute("idData", item.id)
+        
         faqQuestion.textContent = item.question;
         faqItem.appendChild(faqQuestion);
 
@@ -89,17 +96,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    form.onsubmit = function(event) {
-        event.preventDefault();
-        var questionText = document.getElementById('question').value;
-        var answerText = document.getElementById('answer').value;
-
-        if (validateFAQText(questionText, answerText)) {
-            addFAQItem(questionText, answerText);
-            form.reset();
-            modal.style.display = 'none';
-        } else {
-            alert('Veuillez remplir tous les champs.');
-        }
-    }
 });

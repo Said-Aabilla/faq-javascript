@@ -10,8 +10,25 @@
  * @param {Array<string>} possibleAnswers - An array of possible answer options.
  * @param {string | Array<string>} correctAnswer - The correct answer(s).
  */
-function addNewQuestion(questionText, possibleAnswers, correctAnswer) {
+
+const { createElement } = require("react");
+
+const questionText = document.getElementById('question');
+const correctAnswer = document.getElementById('answer');
+const form = document.getElementById('addQuestionForm');
+
+form.addEventListener('submit', () => {
+    addNewQuestion(questionText, correctAnswer);
+    renderFAQ();
+    displayQuestionCount();
+});
+function addNewQuestion(questionText, correctAnswer) {
     // Function body to be implemented
+    faqData.push({
+        id: length + 1,
+        question: questionText.value,
+        answer: correctAnswer.value
+    });
 }
 
 /**
@@ -23,8 +40,12 @@ function addNewQuestion(questionText, possibleAnswers, correctAnswer) {
  * 
  * @param {string} faqElementId - The ID of the HTML element where the number of questions will be displayed.
  */
+
+const questionCount = document.getElementById("questionCount");
+
 function displayQuestionCount(faqElementId) {
     // Function body to be implemented
+    questionCount.textContent = `Nombre de questions : ${faqData.length}`
 }
 
 /**
@@ -36,7 +57,9 @@ function displayQuestionCount(faqElementId) {
  */
 function initializeQuestionList() {
     // Function body to be implemented
+    faqData = [];
 }
+
 
 /**
  * Deletes a specific question from the system.
@@ -46,8 +69,15 @@ function initializeQuestionList() {
  * 
  * @param {string | number} questionId - The identifier of the question to be deleted.
  */
+
+
 function deleteQuestion(questionId) {
     // Function body to be implemented
+    faqData.forEach(item => {
+        
+    })
+
+    
 }
 
 
