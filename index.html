@@ -9,24 +9,31 @@
 <body>
     <div class="container">
         <h1>Foire aux Questions (FAQ)</h1>
+        <div class="section-action">
+            <div id="questionCount">Nombre de questions : 0</div>
+            <button id="addQuestionBtn">Ajouter une question</button>
+        </div>
         <div class="faq">
-            <div class="faq-item">
+            <!-- <div class="faq-item">
                 <button class="faq-question">Question 1 : Comment puis-je réserver une chambre d'hôtel ?</button>
                 <div class="faq-answer">
                     <p>Pour réserver une chambre d'hôtel, veuillez visiter notre page de réservation, choisir vos dates, sélectionner une chambre et compléter le formulaire de réservation.</p>
                 </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Question 2 : Quels sont les modes de paiement acceptés ?</button>
-                <div class="faq-answer">
-                    <p>Nous acceptons les cartes de crédit, PayPal et les virements bancaires comme modes de paiement.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Question 3 : Puis-je annuler ma réservation ?</button>
-                <div class="faq-answer">
-                    <p>Oui, vous pouvez annuler votre réservation jusqu'à 24 heures avant votre date d'arrivée. Veuillez nous contacter pour plus de détails.</p>
-                </div>
+            </div> -->
+        </div>
+
+         <!-- Modale pour ajouter une nouvelle question -->
+        <div id="addQuestionModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Ajouter une nouvelle question</h2>
+                <form id="addQuestionForm">
+                    <label for="question">Question :</label>
+                    <input type="text" id="question" name="question" required>
+                    <label for="answer">Réponse :</label>
+                    <textarea id="answer" name="answer" required></textarea>
+                    <button type="submit">Ajouter</button>
+                </form>
             </div>
         </div>
     </div>
