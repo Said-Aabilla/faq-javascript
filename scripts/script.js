@@ -18,6 +18,16 @@ const faqData = [
         id:4,
         question: "L'hôtel propose-t-il des services de navette ?",
         answer: "Oui, notre hôtel propose un service de navette depuis et vers l'aéroport. Veuillez réserver ce service à l'avance en fournissant les détails de votre vol."
+    },
+    {
+        id:5,
+        question: "",
+        answer: ""
+    },
+    {
+        id:6,
+        question: "",
+        answer: ""
     }
 ];
 
