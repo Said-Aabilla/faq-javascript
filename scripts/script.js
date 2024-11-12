@@ -1,31 +1,37 @@
 const faqData = [
     {
         id:1,
+        status:"open",
         question: "Comment puis-je réserver une chambre d'hôtel ?",
         answer: "Pour réserver une chambre, vous pouvez utiliser notre site web en sélectionnant les dates de votre séjour et en choisissant la chambre souhaitée. Vous recevrez une confirmation par e-mail après avoir complété la réservation."
     },
     {
         id:2,
+        status:"open",
         question: "Quels sont les moyens de paiement acceptés ?",
         answer: "Nous acceptons les paiements par carte de crédit (Visa, MasterCard, American Express), PayPal et les virements bancaires. Les paiements en espèces peuvent être effectués à la réception de l'hôtel."
     },
     {
         id:3,
+        status:"closed",
         question: "Puis-je annuler ou modifier ma réservation ?",
         answer: "Oui, vous pouvez annuler ou modifier votre réservation jusqu'à 24 heures avant la date d'arrivée prévue. Veuillez nous contacter par e-mail ou téléphone pour effectuer ces changements."
     },
     {
         id:4,
+        status:"open",
         question: "L'hôtel propose-t-il des services de navette ?",
         answer: "Oui, notre hôtel propose un service de navette depuis et vers l'aéroport. Veuillez réserver ce service à l'avance en fournissant les détails de votre vol."
     },
     {
         id:5,
+        status:"open",
         question: "",
         answer: ""
     },
     {
         id:6,
+        status:"closed",
         question: "",
         answer: ""
     }
@@ -65,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     renderFAQ(faqData);
 });
 
+// Ajout des click listeners pour toggle des réponses
 document.addEventListener('DOMContentLoaded', function () {
     var faqItems = document.querySelectorAll('.faq-item');
 
@@ -86,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Ajout des click listeners pour toggle du modal de l'ajout
 document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById('addQuestionModal');
     var btn = document.getElementById('addQuestionBtn');

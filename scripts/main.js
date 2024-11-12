@@ -1,5 +1,14 @@
+
+//Question text input
 const questionText = document.getElementById('question');
+
+//Question answer input
 const correctAnswer = document.getElementById('answer');
+
+//Question count div
+const questionCount = document.getElementById("questionCount");
+
+//Add new question/answer form
 const form = document.getElementById('addQuestionForm');
 
 
@@ -16,9 +25,8 @@ function addNewQuestion(questionText, correctAnswer) {
 
 
 
-const questionCount = document.getElementById("questionCount");
 
-function displayQuestionCount(faqElementId) {
+function displayQuestionCount() {
     // Function body to be implemented
 
 }
